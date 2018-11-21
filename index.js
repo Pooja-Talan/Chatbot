@@ -15,6 +15,7 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
   let intentName = req.body.queryResult.intent.displayName;
+  console.log("Inside post===>intentName == > ",intentName);
   var speech = '';
   if(intentName == 'Default Welcome Intent'){
     speech = "Welcome to Myelin Chatbot. How can I help you today?"
@@ -24,7 +25,7 @@ restService.post("/echo", function(req, res) {
     speech = "Welcome to Echo Intent. Your parameter value is "+parameter;
   }
   
-  
+  console.log("Inside Post=====> Speech=======>",speech);
 //   var speech =
 //     req.body.result &&
 //     req.body.result.parameters &&
